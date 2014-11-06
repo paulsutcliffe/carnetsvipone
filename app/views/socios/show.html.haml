@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b Nombre:
+  = @socio.nombre
+%p
+  %b Apellido paterno:
+  = @socio.apellido_paterno
+%p
+  %b Apellido materno:
+  = @socio.apellido_materno
+%p
+  %b Sexo:
+  = @socio.sexo
+%p
+  %b Dni:
+  = @socio.dni
+%p
+  %b Celular:
+  = @socio.celular
+%p
+  %b Fecha de nacimiento:
+  = @socio.fecha_de_nacimiento
+%p
+  %b Email:
+  = @socio.email
+%p
+  %b Direccion:
+  = @socio.direccion
+%p
+  %b Distrito:
+  = @socio.distrito
+
+= link_to 'Edit', edit_socio_path(@socio)
+\|
+= link_to 'Back', socios_path

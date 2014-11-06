@@ -1,0 +1,24 @@
+
+$nodeBottom:  15px;
+
+body {background: white url(image_path('bg-triangles.jpg')) 50% 0; background-repeat: repeat; font-family: 'Open Sans Condensed', sans-serif; font-size: 16px; line-height: 145%; color: #484848}
+
+main {background: none}
+h1, h2, h3, h4, h5, h6 {line-height: 120%; margin: 0}
+
+.page-title {
+  border-bottom: 1px solid #484848; text-align: center; margin: 0 15px $nodeBottom; padding: 0 0 5px;
+  h1 {font-size: 40px}
+}
+
+main .container {padding: 30px 0 0}
+.page-socios-new .form {width: 100%}
+.page-socios-new select {margin: 4px 0 0}
+
+label {font-size: 22px; font-weight: 300}
+select {color: black}
+.full-select select {width: 100%}
+.img-principal {margin-bottom: 30px}
+
+
+

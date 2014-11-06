@@ -1,0 +1,14 @@
+Nuevo Socio:
+
+%table
+  %tr
+    %td= @socio.nombre if @socio.nombre
+    %td= @socio.apellido_paterno if @socio.apellido_paterno
+    %td= @socio.apellido_materno if @socio.apellido_materno
+    %td= @socio.sexo
+    %td= @socio.dni if @socio.dni
+    %td= @socio.celular if @socio.celular
+    %td= @socio.email if @socio.email
+    %td= @socio.fecha_de_nacimiento
+    %td= @socio.direccion if @socio.direccion
+    %td= @socio.distrito

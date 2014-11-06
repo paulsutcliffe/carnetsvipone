@@ -1,0 +1,50 @@
+= form_for @socio, :html => { class: 'form', role: 'form' }  do |f|
+  - if @socio.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@socio.errors.count, "error")} prohibited this socio from being saved:"
+      %ul
+        - @socio.errors.full_messages.each do |msg|
+          %li= msg
+
+  .form-group
+    = f.label :nombre
+    = f.text_field :nombre, class: 'form-control'
+  .form-group
+    = f.label :apellido_paterno, 'Apellido Paterno'
+    = f.text_field :apellido_paterno, class: 'form-control'
+  .form-group
+    = f.label :apellido_materno, 'Apellido Materno'
+    = f.text_field :apellido_materno, class: 'form-control'
+
+  .row
+    .form-group.col-lg-4.full-select
+      = f.label :sexo
+      %br
+      = f.select :sexo, Socio::SEXOS.collect { |i| [i]}, class: 'form-control'
+    .form-group.col-lg-4
+      = f.label :dni, 'DNI'
+      = f.number_field :dni, class: 'form-control'
+    .form-group.col-lg-4
+      = f.label :celular
+      = f.text_field :celular, class: 'form-control'
+
+  .row
+    .form-group.col-lg-8
+      = f.label :email
+      = f.text_field :email, class: 'form-control'
+
+    .form-group.col-lg-4
+      = f.label :fecha_de_nacimiento
+      %br
+      = f.date_select(:fecha_de_nacimiento, start_year: 1960, class: 'form-control')
+
+  .row
+    .form-group.col-lg-8
+      = f.label :direccion, 'Dirección'
+      = f.text_field :direccion, class: 'form-control'
+    .form-group.col-lg-4.full-select
+      = f.label :distrito
+      %br
+      = f.select :distrito, options_for_select(Distrito.all.collect { |distrito| [distrito.nombre]}), class: 'form-control'
+  .actions
+    = f.submit 'Enviar', class: 'btn btn-default btn-lg pull-right'

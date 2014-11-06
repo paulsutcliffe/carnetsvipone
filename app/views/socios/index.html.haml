@@ -1,0 +1,37 @@
+%h1 Listing socios
+
+%table
+  %tr
+    %th Nombre
+    %th Apellido paterno
+    %th Apellido materno
+    %th Sexo
+    %th Dni
+    %th Celular
+    %th Fecha de nacimiento
+    %th Email
+    %th Direccion
+    %th Distrito
+    %th
+    %th
+    %th
+
+  - @socios.each do |socio|
+    %tr
+      %td= socio.nombre
+      %td= socio.apellido_paterno
+      %td= socio.apellido_materno
+      %td= socio.sexo
+      %td= socio.dni
+      %td= socio.celular
+      %td= socio.fecha_de_nacimiento
+      %td= socio.email
+      %td= socio.direccion
+      %td= socio.distrito
+      %td= link_to 'Show', socio
+      %td= link_to 'Edit', edit_socio_path(socio)
+      %td= link_to 'Destroy', socio, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Socio', new_socio_path
